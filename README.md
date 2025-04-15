@@ -4,7 +4,7 @@ A stunning, interactive website dedicated to celebrating the mathematical consta
 
 ## Live Demo
 
-Visit the live site at: [https://jbenfante.github.io/pi-tribute/](https://jbenfante.github.io/pi-tribute/)
+Visit the live site at: [https://jebalert.github.io/pi-tribute/](https://jebalert.github.io/pi-tribute/)
 
 ## Features
 
@@ -101,6 +101,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Joseph Benfante - [@jbenfante](https://github.com/jebalert)
+Joseph Benfante - [@jebalert](https://github.com/jebalert)
 
-Project Link: [https://github.com/jbenfante/pi-tribute](https://github.com/jbenfante/pi-tribute)
+Project Link: [https://github.com/jebalert/pi-tribute](https://github.com/jebalert/pi-tribute)
