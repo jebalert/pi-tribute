@@ -82,7 +82,7 @@ const TimelineContainer = styled.div`
       transparent
     );
     opacity: 0.5;
-    z-index: 0;
+    z-index: 1;
   }
 `;
 
@@ -95,6 +95,8 @@ const TimelineItem = styled(motion.div)`
   padding: 0;
   position: relative;
   z-index: 2;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
 
   &:nth-of-type(even) {
     flex-direction: row-reverse;
@@ -128,12 +130,13 @@ const Year = styled.div`
     left: ${props => props.className === 'year' ? 'auto' : '-22px'};
     right: ${props => props.className === 'year' ? '-22px' : 'auto'};
     box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
-    z-index: 4;
+    z-index: 2;
+    background: radial-gradient(circle at center, #61dafb, #61dafb);
   }
 `;
 
 const Content = styled.div`
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(30, 30, 30, 0.95);
   padding: 1.5rem;
   border-radius: 8px;
   width: 350px;
@@ -142,10 +145,11 @@ const Content = styled.div`
   position: relative;
   margin: 0 1rem;
   z-index: 3;
+  transform: translateZ(0);
 
   &:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(40, 40, 40, 0.95);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
 
@@ -157,6 +161,7 @@ const Content = styled.div`
     height: 2px;
     background: #61dafb;
     opacity: 0.5;
+    z-index: 2;
   }
 
   &.content::before {
@@ -197,8 +202,8 @@ const Timeline = () => {
       {timelineData.map((item, index) => {
         const [ref, inView] = useInView({
           triggerOnce: true,
-          threshold: 0.2,
-          rootMargin: "50px",
+          threshold: 0.1,
+          rootMargin: "-50px",
         });
 
         return (
@@ -207,7 +212,11 @@ const Timeline = () => {
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.3) }}
+            transition={{ 
+              duration: 0.4,
+              delay: Math.min(index * 0.1, 0.3),
+              ease: "easeOut"
+            }}
           >
             <Year className={index % 2 === 0 ? 'year' : ''}>{item.year}</Year>
             <Content className={index % 2 === 0 ? 'content' : ''}>
