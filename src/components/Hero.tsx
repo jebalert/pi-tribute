@@ -15,27 +15,20 @@ const HeroContainer = styled.div`
   overflow: hidden;
 `;
 
-const ContentContainer = styled.div`
+const ContentWrapper = styled.div`
   position: relative;
-  width: 300px;
-  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  @media (max-width: 768px) {
-    width: 200px;
-    height: 300px;
-  }
+  justify-content: center;
+  min-height: 70vh;
 `;
 
-const PieContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+const AnimationContainer = styled.div`
+  position: relative;
   width: 300px;
   height: 300px;
+  margin-bottom: 2rem;
   
   @media (max-width: 768px) {
     width: 200px;
@@ -68,9 +61,11 @@ const Title = styled(motion.h1)`
   margin: 0;
   font-family: 'Times New Roman', serif;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
   
@@ -87,9 +82,9 @@ const MmmText = styled(motion.h2)`
   text-shadow: 0 0 10px rgba(97, 218, 251, 0.3);
   white-space: nowrap;
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  bottom: -3rem;
   
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -138,8 +133,8 @@ const Hero = () => {
 
   return (
     <HeroContainer>
-      <ContentContainer>
-        <PieContainer>
+      <ContentWrapper>
+        <AnimationContainer>
           <AnimatePresence>
             {showPie && (
               <PieImage
@@ -183,29 +178,29 @@ const Hero = () => {
               </Title>
             )}
           </AnimatePresence>
-        </PieContainer>
-        <AnimatePresence>
-          {showMmm && !showPi && (
-            <MmmText
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              Mmm Pi.
-            </MmmText>
-          )}
-        </AnimatePresence>
-      </ContentContainer>
-      <Subtitle
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 3, duration: 0.8 }}
-      >
-        Discover the infinite journey of π (pi), the mathematical constant that has
-        fascinated minds for millennia. From ancient civilizations to modern
-        computing, explore the endless story of this remarkable number.
-      </Subtitle>
+          <AnimatePresence>
+            {showMmm && !showPi && (
+              <MmmText
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                Mmm Pi.
+              </MmmText>
+            )}
+          </AnimatePresence>
+        </AnimationContainer>
+        <Subtitle
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3, duration: 0.8 }}
+        >
+          Discover the infinite journey of π (pi), the mathematical constant that has
+          fascinated minds for millennia. From ancient civilizations to modern
+          computing, explore the endless story of this remarkable number.
+        </Subtitle>
+      </ContentWrapper>
     </HeroContainer>
   );
 };
