@@ -4,7 +4,7 @@ A stunning, interactive website dedicated to celebrating the mathematical consta
 
 ## Live Demo
 
-Visit the live site at: [https://jebalert.github.io/pi-tribute/](https://jebalert.github.io/pi-tribute/)
+Visit the live site at: [https://mmmpi.com](https://mmmpi.com)
 
 ## Features
 
@@ -56,12 +56,21 @@ npm run build
 
 ## Deployment
 
-This site is automatically deployed to GitHub Pages using GitHub Actions. Any push to the `main` branch will trigger a new deployment.
+This site is automatically deployed using GitHub Pages and is accessible at [https://mmmpi.com](https://mmmpi.com).
 
 To deploy manually:
 1. Go to the "Actions" tab in the GitHub repository
 2. Select the "Deploy to GitHub Pages" workflow
 3. Click "Run workflow"
+
+### Custom Domain Setup
+
+The site is configured to use a custom domain (mmmpi.com) with HTTPS enabled. The configuration includes:
+
+- Custom domain configuration in GitHub Pages settings
+- CNAME file in the public directory
+- DNS records pointing to GitHub Pages servers
+- Automatic HTTPS certificate provisioning through GitHub Pages
 
 ## Technology Stack
 
