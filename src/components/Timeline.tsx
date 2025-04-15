@@ -82,7 +82,7 @@ const TimelineContainer = styled.div`
       transparent
     );
     opacity: 0.5;
-    z-index: 1;
+    z-index: 0;
   }
 `;
 
@@ -146,6 +146,20 @@ const Content = styled.div`
   margin: 0 1rem;
   z-index: 3;
   transform: translateZ(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* Add a pseudo-element to create a solid background behind the content */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    z-index: -1;
+  }
 
   &:hover {
     transform: translateY(-5px);
