@@ -17,6 +17,19 @@ const AdContainer = styled.div`
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+`;
+
+const PlaceholderText = styled.div`
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  padding: 2rem;
+  text-align: center;
 `;
 
 const AdBanner = () => {
@@ -30,21 +43,22 @@ const AdBanner = () => {
     }
   }, []);
 
-  // Only render ad if AdSense is configured
-  if (!import.meta.env.VITE_ADSENSE_PUB_ID) {
-    return null;
-  }
-
   return (
     <AdContainer>
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block', width: '100%', height: '100%' }}
-        data-ad-client={import.meta.env.VITE_ADSENSE_PUB_ID}
-        data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT}
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      />
+      {import.meta.env.VITE_ADSENSE_PUB_ID ? (
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block', width: '100%', height: '100%' }}
+          data-ad-client={import.meta.env.VITE_ADSENSE_PUB_ID}
+          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT}
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+      ) : (
+        <PlaceholderText>
+          Advertisement Space
+        </PlaceholderText>
+      )}
     </AdContainer>
   );
 };
