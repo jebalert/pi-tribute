@@ -82,6 +82,7 @@ const TimelineContainer = styled.div`
       transparent
     );
     opacity: 0.5;
+    z-index: 0;
   }
 `;
 
@@ -92,6 +93,8 @@ const TimelineItem = styled(motion.div)`
   margin: 2rem 0;
   width: 100%;
   padding: 0;
+  position: relative;
+  z-index: 2;
 
   &:nth-of-type(even) {
     flex-direction: row-reverse;
@@ -109,7 +112,7 @@ const Year = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 3;
   justify-content: ${props => props.className === 'year' ? 'flex-end' : 'flex-start'};
   padding: ${props => props.className === 'year' ? '0 32px 0 0' : '0 0 0 32px'};
 
@@ -125,6 +128,7 @@ const Year = styled.div`
     left: ${props => props.className === 'year' ? 'auto' : '-22px'};
     right: ${props => props.className === 'year' ? '-22px' : 'auto'};
     box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+    z-index: 4;
   }
 `;
 
@@ -137,6 +141,7 @@ const Content = styled.div`
   transition: all 0.3s ease;
   position: relative;
   margin: 0 1rem;
+  z-index: 3;
 
   &:hover {
     transform: translateY(-5px);
