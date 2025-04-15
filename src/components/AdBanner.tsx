@@ -22,7 +22,7 @@ const AdContainer = styled.div`
 const AdBanner = () => {
   useEffect(() => {
     try {
-      if (window.adsbygoogle) {
+      if (window.adsbygoogle && import.meta.env.VITE_ADSENSE_PUB_ID) {
         window.adsbygoogle.push({});
       }
     } catch (error) {
@@ -30,12 +30,17 @@ const AdBanner = () => {
     }
   }, []);
 
+  // Only render ad if AdSense is configured
+  if (!import.meta.env.VITE_ADSENSE_PUB_ID) {
+    return null;
+  }
+
   return (
     <AdContainer>
       <ins
         className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+        style={{ display: 'block', width: '100%', height: '100%' }}
+        data-ad-client={import.meta.env.VITE_ADSENSE_PUB_ID}
         data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT}
         data-ad-format="auto"
         data-full-width-responsive="true"

@@ -7,7 +7,15 @@
     <meta name="description" content="A beautiful journey through the history of π (pi), featuring interactive visualizations and fascinating facts." />
     <title>π Tribute - A Journey Through the History of Pi</title>
     <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID_HERE" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      window.onload = function() {
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: import.meta.env.VITE_ADSENSE_PUB_ID,
+          enable_page_level_ads: true
+        });
+      };
+    </script>
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License

@@ -31,6 +31,9 @@ jobs:
         run: npm ci
       
       - name: Build
+        env:
+          VITE_ADSENSE_PUB_ID: ${{ secrets.ADSENSE_PUB_ID }}
+          VITE_ADSENSE_SLOT: ${{ secrets.ADSENSE_SLOT }}
         run: npm run build
       
       - name: Setup Pages
