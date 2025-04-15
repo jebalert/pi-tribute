@@ -9,19 +9,28 @@ declare global {
 
 const AdContainer = styled.div`
   width: 100%;
-  min-height: 100px;
-  margin: 2rem 0;
+  min-height: 120px;
+  margin: 3rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   overflow: hidden;
   backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 
+  @media (max-width: 768px) {
+    margin: 2rem 0;
+    min-height: 100px;
+  }
+
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(97, 218, 251, 0.1);
   }
 `;
 
