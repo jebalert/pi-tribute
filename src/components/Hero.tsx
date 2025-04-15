@@ -13,7 +13,6 @@ const HeroContainer = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
   position: relative;
   overflow: hidden;
-  padding-bottom: 5vh;
 `;
 
 const ContentContainer = styled.div`
@@ -23,7 +22,6 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateY(-10%);
   
   @media (max-width: 768px) {
     width: 200px;
@@ -33,7 +31,7 @@ const ContentContainer = styled.div`
 
 const PieContainer = styled.div`
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
@@ -70,7 +68,7 @@ const Title = styled(motion.h1)`
   margin: 0;
   font-family: 'Times New Roman', serif;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
@@ -104,12 +102,10 @@ const Subtitle = styled(motion.p)`
   width: 90%;
   line-height: 1.6;
   margin: 0 auto;
-  margin-top: 180px;
   
   @media (max-width: 768px) {
     font-size: 1.2rem;
     width: 85%;
-    margin-top: 140px;
   }
 `;
 
