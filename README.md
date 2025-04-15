@@ -26,7 +26,7 @@ Visit the live site at: [https://jebalert.github.io/pi-tribute/](https://jebaler
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/jbenfante/pi-tribute.git
+git clone https://github.com/jebalert/pi-tribute.git
 cd pi-tribute
 ```
 
