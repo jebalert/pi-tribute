@@ -88,6 +88,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Joseph Benfante - [@jbenfante](https://github.com/jbenfante)
+Joseph Benfante - [@jbenfante](https://github.com/jebalert)
 
 Project Link: [https://github.com/jbenfante/pi-tribute](https://github.com/jbenfante/pi-tribute)
