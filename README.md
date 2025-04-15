@@ -2,6 +2,10 @@
 
 A stunning, interactive website dedicated to celebrating the mathematical constant π (pi). This site features beautiful visualizations, historical timelines, and interesting facts about pi, making mathematics more accessible and engaging for everyone.
 
+## Live Demo
+
+Visit the live site at: [https://jbenfante.github.io/pi-tribute/](https://jbenfante.github.io/pi-tribute/)
+
 ## Features
 
 - 🎨 Beautiful, responsive design with smooth animations
@@ -22,7 +26,7 @@ A stunning, interactive website dedicated to celebrating the mathematical consta
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/pi-tribute.git
+git clone https://github.com/jbenfante/pi-tribute.git
 cd pi-tribute
 ```
 
@@ -49,6 +53,15 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Deployment
+
+This site is automatically deployed to GitHub Pages using GitHub Actions. Any push to the `main` branch will trigger a new deployment.
+
+To deploy manually:
+1. Go to the "Actions" tab in the GitHub repository
+2. Select the "Deploy to GitHub Pages" workflow
+3. Click "Run workflow"
 
 ## Technology Stack
 
