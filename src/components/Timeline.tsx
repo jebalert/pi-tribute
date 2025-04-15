@@ -136,7 +136,7 @@ const Year = styled.div`
 `;
 
 const Content = styled.div`
-  background: rgba(30, 30, 30, 0.95);
+  background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 8px;
   width: 350px;
@@ -149,7 +149,7 @@ const Content = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    background: rgba(40, 40, 40, 0.95);
+    background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
 
